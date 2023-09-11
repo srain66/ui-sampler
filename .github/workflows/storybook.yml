@@ -60,7 +60,7 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
-      - name: Build with Next.js
+      - name: Build Storybook
         run: ${{ steps.detect-package-manager.outputs.runner }} storybook build
 
       - name: Upload artifact
