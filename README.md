@@ -20,3 +20,17 @@
 npm ci
 npm run storybook
 ```
+
+## Snapshot Test
+
+### Test
+
+```bash
+npm test
+```
+
+### Update Snapshot
+
+```bash
+npm test -- -u
+```
