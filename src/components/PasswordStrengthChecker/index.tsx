@@ -80,6 +80,7 @@ const BarContainer = styled.div`
 
 const Bar = styled.div`
   height: 0.5rem;
+  transition: width 0.3s;
 `;
 
 const Text = styled.p`
