@@ -1,13 +1,13 @@
 import { ChangeEvent, useMemo, useState } from "react";
 import { styled } from "styled-components";
-import StrengthChecker from "./StrengthChecker";
 import { validateStrength } from "./validate.util";
+import PasswordStrengthChecker from "@/components/PasswordStrengthChecker";
 
 interface IProps {
   strengthChecker: boolean;
 }
 
-export default function Password({
+export default function PasswordInput({
   strengthChecker = true,
 }: IProps): JSX.Element {
   const [value, setValue] = useState<string>("");
@@ -27,7 +27,7 @@ export default function Password({
         />
       </label>
 
-      {strengthChecker && <StrengthChecker strength={strength} />}
+      {strengthChecker && <PasswordStrengthChecker strength={strength} />}
     </Wrapper>
   );
 }

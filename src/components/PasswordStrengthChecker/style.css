@@ -1,0 +1,74 @@
+#password-strength-checker {
+  --color-strong: #10b981;
+  --color-good: #3b82f6;
+  --color-fair: #f59e0b;
+  --color-weak: #ef4444;
+}
+
+.wrapper {
+  min-width: 240px;
+  width: "100%";
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  padding: 0.25rem;
+}
+
+.head {
+  display: flex;
+  font-weight: bold;
+}
+
+.title {
+  flex: none;
+  margin-left: auto;
+}
+
+.title.strong {
+  color: var(--color-strong);
+}
+.title.good {
+  color: var(--color-good);
+}
+.title.fair {
+  color: var(--color-fair);
+}
+.title.weak {
+  color: var(--color-weak);
+}
+
+.bar-container {
+  width: 100%;
+  height: 0.5rem;
+  background: #eee;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.bar {
+  height: 0.5rem;
+  transition: width 0.3s;
+}
+
+.bar.strong {
+  background-color: green;
+  width: 90%;
+}
+.bar.good {
+  background-color: var(--color-good);
+  width: 60%;
+}
+.bar.fair {
+  background-color: var(--color-fair);
+  width: 30%;
+}
+.bar.weak {
+  background-color: var(--color-weak);
+  width: 10%;
+}
+
+.description {
+  color: gray;
+}

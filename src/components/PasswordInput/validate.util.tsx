@@ -1,6 +1,6 @@
-import { StrengthRating } from "./strength.interface";
+import { PasswordStrength } from "@/interfaces/passwordStrength";
 
-export const validateStrength = (value: string): StrengthRating => {
+export const validateStrength = (value: string): PasswordStrength => {
   // 영문, 8자 이상
   const fairRegEx = /^(?=.*[a-zA-Z]).{8,}$/;
   // 영문 + 숫자, 8자 이상
@@ -9,13 +9,13 @@ export const validateStrength = (value: string): StrengthRating => {
   const strongRegEx = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^*+=-]).{8,}$/;
 
   if (!value.match(fairRegEx)) {
-    return StrengthRating.WEAK;
+    return PasswordStrength.WEAK;
   }
   if (!value.match(goodRegEx)) {
-    return StrengthRating.FAIR;
+    return PasswordStrength.FAIR;
   }
   if (!value.match(strongRegEx)) {
-    return StrengthRating.GOOD;
+    return PasswordStrength.GOOD;
   }
-  return StrengthRating.STRONG;
+  return PasswordStrength.STRONG;
 };
