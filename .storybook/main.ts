@@ -22,8 +22,6 @@ const config = {
       "@": path.resolve(__dirname, "../src"),
     };
 
-    console.log(newConfig);
-
     return newConfig;
   },
 };
