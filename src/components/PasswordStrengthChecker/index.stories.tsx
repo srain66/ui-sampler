@@ -1,40 +1,40 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import StrengthChecker from "./StrengthChecker";
-import { StrengthRating } from "./strength.interface";
+import PasswordStrengthChecker from "./";
+import { PasswordStrength } from "@/interfaces/passwordStrength";
 
 const meta = {
-  title: "Forms/StrengthChecker",
-  component: StrengthChecker,
+  title: "Components/PasswordStrengthChecker",
+  component: PasswordStrengthChecker,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
   argTypes: { strength: { controls: "type" } },
-} satisfies Meta<typeof StrengthChecker>;
+} satisfies Meta<typeof PasswordStrengthChecker>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Weak: Story = {
   args: {
-    strength: StrengthRating.WEAK,
+    strength: PasswordStrength.WEAK,
   },
 };
 
 export const Fair: Story = {
   args: {
-    strength: StrengthRating.FAIR,
+    strength: PasswordStrength.FAIR,
   },
 };
 
 export const Good: Story = {
   args: {
-    strength: StrengthRating.GOOD,
+    strength: PasswordStrength.GOOD,
   },
 };
 
 export const Strong: Story = {
   args: {
-    strength: StrengthRating.STRONG,
+    strength: PasswordStrength.STRONG,
   },
 };

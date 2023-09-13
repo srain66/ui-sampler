@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { StrengthRating } from "./strength.interface";
 import { useMemo } from "react";
+import { PasswordStrength } from "@/interfaces/passwordStrength";
 
 interface IProps {
-  strength: StrengthRating;
+  strength: PasswordStrength;
 }
 
-export default function StrengthChecker({ strength }: IProps) {
+export default function PasswordStrengthChecker({ strength }: IProps) {
   const { color, width, text } = useMemo(
     () => differentByStrength[strength],
     [strength]
@@ -27,22 +27,22 @@ export default function StrengthChecker({ strength }: IProps) {
 }
 
 const differentByStrength = {
-  [StrengthRating.STRONG]: {
+  [PasswordStrength.STRONG]: {
     color: "#10B981",
     width: "90%",
     text: "Your password is STRONG!",
   },
-  [StrengthRating.GOOD]: {
+  [PasswordStrength.GOOD]: {
     color: "#3B82F6",
     width: "60%",
     text: "Your password is easily guessable.",
   },
-  [StrengthRating.FAIR]: {
+  [PasswordStrength.FAIR]: {
     color: "#F59E0B",
     width: "30%",
     text: "Your password is easily guessable.",
   },
-  [StrengthRating.WEAK]: {
+  [PasswordStrength.WEAK]: {
     color: "#EF4444",
     width: "10%",
     text: "Your password is easily guessable.",
